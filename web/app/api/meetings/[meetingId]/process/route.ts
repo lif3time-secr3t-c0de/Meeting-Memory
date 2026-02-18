@@ -15,7 +15,7 @@ import {
 import { extractActionItems } from "@/lib/server/action-items";
 
 export const runtime = "nodejs";
-export const maxDuration = 900;
+export const maxDuration = 300;
 
 const RECORDINGS_DIR = path.join(process.cwd(), "tmp", "recordings");
 const TRANSCRIPTS_DIR = path.join(process.cwd(), "tmp", "transcripts");
