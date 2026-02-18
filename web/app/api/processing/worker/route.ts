@@ -6,7 +6,7 @@ import {
 } from "@/lib/server/processing-queue-repo";
 
 export const runtime = "nodejs";
-export const maxDuration = 900;
+export const maxDuration = 300;
 
 function resolveBaseUrl(request: Request): string {
   const explicit = process.env.APP_BASE_URL?.trim();
