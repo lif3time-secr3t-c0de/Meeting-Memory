@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6ebdc;
+  --foreground: #26130d;
+  --surface: rgba(255, 250, 245, 0.74);
+  --surface-border: rgba(151, 74, 53, 0.24);
+  --accent: #c43a24;
+  --accent-dark: #912714;
+  --wave-bg: #1f120e;
+  --wave-line: #ffd6ab;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-heading);
+  --font-mono: var(--font-code);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-heading), "Segoe UI", sans-serif;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(255, 191, 123, 0.55), transparent 38%),
+    radial-gradient(circle at 86% 12%, rgba(255, 145, 96, 0.33), transparent 42%),
+    linear-gradient(180deg, #f6ebdc 0%, #f2e2cb 52%, #eedcc2 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, rgba(90, 52, 39, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(90, 52, 39, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(232, 65, 38, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 28px rgba(232, 65, 38, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(232, 65, 38, 0);
+  }
+}
+
+.pulse-ring {
+  animation: pulse-ring 1.9s ease-out infinite;
+}
